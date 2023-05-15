@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AdminBasePage"
+             Title="AdminBasePage"
+             BackgroundImageSource="purplebackground.jpg"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <VerticalStackLayout HorizontalOptions="FillAndExpand">
+        <HorizontalStackLayout Grid.Column="0" Margin="80,35,0,0" Spacing="30" HorizontalOptions="FillAndExpand">
+          <!--  <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">-->
+                <Image Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    />
+         <!--   </Frame>
+            <Frame Margin="10,0,0,0" BorderColor="Black">-->
+                <Image Source="adminslogan.png"
+                    HeightRequest="100"/>
+            <ImageButton Source="logouticon.png" HeightRequest="50" Clicked="ImageButton_Clicked" HorizontalOptions="EndAndExpand"/>
+        </HorizontalStackLayout >
+        <!--  <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+           
+        </Frame>-->
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,0,0,0" HeightRequest="1.5"/>
+
+    
+            <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" Padding="50,20,50,20" Margin="100,50,100,50" >
+            <Grid HorizontalOptions="CenterAndExpand" RowSpacing="30" ColumnSpacing="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="-20" >
+                    <ImageButton x:Name="dealsButton" Source="dealicon.png" WidthRequest="250" BackgroundColor="{x:StaticResource Gray900}" Clicked="onButton_Clicked"/>
+                    <Label Text="MANAGE DEALS" FontAttributes="Italic,Bold" FontSize="24" TextColor="{x:StaticResource GoodPurple}" HorizontalOptions="CenterAndExpand"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="-20">
+                    <ImageButton x:Name="jewsButton" Source="jewsicon1.png" WidthRequest="250" BackgroundColor="{x:StaticResource Gray900}" Clicked="onButton_Clicked"/>
+                    <Label Text="MY GOODS" FontAttributes="Italic,Bold" FontSize="24" TextColor="{x:StaticResource GoodPurple}" HorizontalOptions="CenterAndExpand"/>
+                </VerticalStackLayout>
+                <ImageButton x:Name="commentsButton" Grid.Row="1" Grid.Column="0" Source="commenticon.png" WidthRequest="250" BackgroundColor="{x:StaticResource Gray900}" Clicked="onButton_Clicked"/>
+
+                <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="-10">
+                    <ImageButton x:Name="notificationsButton" Source="adminnotification.png" WidthRequest="200" BackgroundColor="{x:StaticResource Gray900}" Clicked="onButton_Clicked"/>
+                    <Label Text="MY NOTIFICATIONS" FontAttributes="Italic,Bold" FontSize="24" TextColor="{x:StaticResource GoodPurple}" HorizontalOptions="CenterAndExpand"/>
+                </VerticalStackLayout>
+
+                
+
+
+            </Grid>
+        </Frame>
+       
+
+       
+
+    </VerticalStackLayout>
+</ContentPage>

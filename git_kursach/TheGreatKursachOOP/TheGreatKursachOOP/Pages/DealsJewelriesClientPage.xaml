@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.DealsJewelriesClientPage"
+             Title="DealsJewelriesClientPage"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <VerticalStackLayout>
+        <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+            <HorizontalStackLayout Grid.Column="0">
+                <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">
+                    <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    Clicked="ImageButton_Clicked"/>
+                </Frame>
+                <Frame Margin="10,0,0,0" BorderColor="Black">
+                    <Image Source="slogan.png"
+                    HeightRequest="100"/>
+                </Frame>
+            </HorizontalStackLayout >
+        </Frame>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,-50,0,49.5"/>
+
+        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" 
+               Padding="50,20,50,20" Margin="100,0,100,50" HeightRequest="600">
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="My deals" FontSize="16" TextDecorations="Underline" HorizontalOptions="Center"/>
+                    <HorizontalStackLayout Margin="30, 30, 30, 0" HorizontalOptions="CenterAndExpand">
+                        <RadioButton x:Name="allRB" Content="all" RadioButtonGroup.GroupName="dealsRBGroup" CheckedChanged="RB_CheckedChanged"/>
+                        <RadioButton x:Name="offeredRB" Content="offered" RadioButtonGroup.GroupName="dealsRBGroup" CheckedChanged="RB_CheckedChanged"/>
+                        <RadioButton x:Name="confirmedRB" Content="confirmed" RadioButtonGroup.GroupName="dealsRBGroup" CheckedChanged="RB_CheckedChanged"/>
+                    </HorizontalStackLayout>
+                    <ScrollView HeightRequest="500" Margin="40,40,40,0">
+                        <CollectionView x:Name="dealsCW" ItemsSource="{Binding deals}" SelectionMode="None" SelectionChanged="dealsCW_SelectionChanged">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout>
+                                        <Image Source="{Binding JewelryPath}" WidthRequest="200" Margin="0,0,0,10" />
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding Status, StringFormat='Status:  {0}'}"/>
+                                            <Label Text="{Binding ID, StringFormat='Id:  {0}'}"/>
+                                            <Label Text="{Binding JewelryId, StringFormat='Jew. Id:  {0}'}"/>
+                                            <Label Text="{Binding ClientId, StringFormat='Client Id:  {0}'}" Margin="0,0,0,20" />
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                    <Label Text="My jewelries" FontSize="16" TextDecorations="Underline" HorizontalOptions="Center"/>
+                    <HorizontalStackLayout Margin="30, 30, 30, 0" HorizontalOptions="CenterAndExpand" Spacing="50">
+                        <Button x:Name="handoverButton" IsEnabled="False" Text="Hand over" BackgroundColor="{x:StaticResource Gray950}" TextColor="LawnGreen" 
+                                BorderColor="LawnGreen" BorderWidth="1.5" Clicked="onButton_Clicked"  WidthRequest="110" HeightRequest="40"/>
+                        <Button x:Name="deleteButton" IsEnabled="False" Text="Delete" FontAttributes="Bold" BackgroundColor="{x:StaticResource Gray950}" TextColor="Red" 
+                                BorderColor="Red" BorderWidth="1.5" Clicked="onButton_Clicked" WidthRequest="110" HeightRequest="40"/>
+                        <RadioButton x:Name="allJewRB" Content="all" RadioButtonGroup.GroupName="jewsRBGroup" CheckedChanged="jewRB_CheckedChanged"/>
+                        <RadioButton x:Name="addedJewRB" Content="added" RadioButtonGroup.GroupName="jewsRBGroup" CheckedChanged="jewRB_CheckedChanged"/>
+                    </HorizontalStackLayout>
+                    <ScrollView  Margin="40,40,40,0" HeightRequest="500">
+                        <CollectionView x:Name="jewsCW" ItemsSource="{Binding jewelries}" SelectionMode="None">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Image Source="{Binding Image}" WidthRequest="200" Margin="0,0,0,10"/>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding ID, StringFormat='Id:  {0}'}"/>
+                                            <Label Text="{Binding Name, StringFormat='Name:  {0}'}"/>
+                                            <Label Text="{Binding Status, StringFormat='Status:  {0}'}"/>
+                                            <Label Text="{Binding OwnerId, StringFormat='Client Id:  {0}'}" Margin="0,0,0,20"/>
+                                        </VerticalStackLayout >
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

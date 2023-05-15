@@ -1,0 +1,19 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="TheGreatKursachOOP.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:TheGreatKursachOOP.WinUI">
+
+    <maui:MauiWinUIApplication.Resources>
+        <ResourceDictionary>
+            <!-- ToggleSwitch : Turn off ON/OFF label -->
+            <Style TargetType="ToggleSwitch">
+                <Setter Property="OffContent" Value="Use pseudomym" />
+                <Setter Property="OnContent" Value="Use user name and surname" />
+                <Setter Property="Margin" Value="0,0,-110,0" />
+            </Style>
+        </ResourceDictionary>
+    </maui:MauiWinUIApplication.Resources>
+</maui:MauiWinUIApplication>
+

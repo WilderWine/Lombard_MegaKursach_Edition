@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AddFriendPage"
+             Title="AddFriendPage"       
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             BackgroundImageSource="money.jpg"
+             >
+    <Frame BackgroundColor="Black" BorderColor="Black" Padding="0" Margin="200,30,200,30" HorizontalOptions="FillAndExpand">
+        <VerticalStackLayout>
+            <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+                <HorizontalStackLayout Grid.Column="0">
+                    <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">
+                        <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    Clicked="ImageButton_Clicked"/>
+                    </Frame>
+                    <Frame Margin="10,0,0,0" BorderColor="Black">
+                        <Image Source="slogan.png"
+                    HeightRequest="100"/>
+                    </Frame>
+                </HorizontalStackLayout >
+            </Frame>
+            <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,-50,0,49.5"/>
+
+            <Label Margin="0,0,0,20" Text="Invite friend and get 200 money when he comes!" FontSize="18" TextColor="LawnGreen" HorizontalOptions="CenterAndExpand"/>
+            <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" Margin="100, 0, 100, 0">
+
+                <VerticalStackLayout Spacing="30" Padding="30">
+                    <Entry x:Name="nameEntry"  HeightRequest="40" MinimumWidthRequest="450" Placeholder="name" BackgroundColor="{x:StaticResource Gray950}" MaxLength="25" TextChanged="entry_TextChanged"/>
+                    <Label x:Name="n_angry_label" TextColor="Red" FontSize="10" Margin="0, -25, 0, 0" Text=""/>
+                    <Entry x:Name="surnameEntry" HeightRequest="40" MinimumWidthRequest="450" Placeholder="surname" BackgroundColor="{x:StaticResource Gray950}" MaxLength="25" TextChanged="entry_TextChanged"/>
+                    <Label x:Name="s_angry_label" TextColor="Red" FontSize="10" Margin="0, -25, 0, 0" Text=""/>
+                    <Entry x:Name="fathernameEntry" HeightRequest="40" MinimumWidthRequest="450" Placeholder="fathername" BackgroundColor="{x:StaticResource Gray950}" MaxLength="25" TextChanged="entry_TextChanged"/>
+                    <Label x:Name="f_angry_label" TextColor="Red" FontSize="10" Margin="0, -25, 0, 0" Text=""/>
+                    <Entry x:Name="codeEntry" HeightRequest="40" MinimumWidthRequest="450" Placeholder="code word" BackgroundColor="{x:StaticResource Gray950}" MaxLength="10" TextChanged="entry_TextChanged"/>
+                    <Label x:Name="c_angry_label" TextColor="Red" FontSize="10" Margin="0, -25, 0, 0" Text=""/>
+                    
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="50">
+                        <Button x:Name="backButton" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}" 
+                                BorderColor="LawnGreen" BorderWidth="1.5" TextColor="LawnGreen" Text="Back" 
+                                Clicked="onButton_Clicked"/>
+                        <Button x:Name="saveButton" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}" 
+                                BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5" TextColor="{x:StaticResource GoodPurple}" Text="Save"
+                                Clicked="onButton_Clicked"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+
+
+
+
+        </VerticalStackLayout>
+    </Frame>
+</ContentPage>

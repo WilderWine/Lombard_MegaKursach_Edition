@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AdminNotificationPage"
+             Title="AdminNotificationPage" 
+             BackgroundImageSource="purplebackground.jpg"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <VerticalStackLayout>
+        <HorizontalStackLayout Grid.Column="0" Margin="80,35,0,0" Spacing="30">
+            <!--  <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">-->
+            <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                         Clicked="ImageButton_Clicked"
+                    />
+            <!--   </Frame>
+            <Frame Margin="10,0,0,0" BorderColor="Black">-->
+            <Image Source="adminslogan.png"
+                    HeightRequest="100"/>
+            <!--</Frame>-->
+        </HorizontalStackLayout >
+        <!--  <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+           
+        </Frame>-->
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,0,0,0" HeightRequest="1.5"/>
+
+
+        <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" Padding="50,20,50,20" Margin="100,50,100,50" >
+            <VerticalStackLayout VerticalOptions="FillAndExpand">
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="50">
+                    <ImageButton x:Name="updateButton" Source="updateicon.png" Clicked="Button_Clicked" HeightRequest="45"/>
+                    <Button x:Name="cancelButton" Text="cancel" Clicked="Button_Clicked" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}"
+                            BorderColor="LawnGreen" BorderWidth="1.5" TextColor="LawnGreen"/>
+
+                    <Button x:Name="backButton" Text="back" Clicked="Button_Clicked" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}"
+                            BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5" TextColor="{x:StaticResource GoodPurple}"/>
+                    <Button x:Name="deleteButton" Text="delete" Clicked="Button_Clicked" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}"
+                            BorderColor="Red" BorderWidth="1.5" TextColor="Red" FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+                <Line HeightRequest="1.5" BackgroundColor="{x:StaticResource GoodPurple}" Margin="50,20,50,0"/>
+
+                <ScrollView VerticalOptions="EndAndExpand" Margin="0,20" HeightRequest="400">
+                    <CollectionView x:Name="notifsView" ItemsSource="{Binding notifications}" SelectionMode="Multiple">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+
+                                <VerticalStackLayout Spacing="10">
+                                    <Label Text="{Binding ID}" FontSize="16" TextDecorations="Underline"/>
+                                    <Label Text="{Binding Message}" FontSize="14" />
+                                    <Line HeightRequest="1.5" BackgroundColor="LawnGreen" HorizontalOptions="CenterAndExpand" Margin="0,5,0,5"/>
+                                </VerticalStackLayout>
+
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

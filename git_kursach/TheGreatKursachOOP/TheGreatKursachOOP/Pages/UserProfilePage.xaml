@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.UserProfilePage"
+             Title="UserProfilePage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             >
+    <VerticalStackLayout>
+        <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+            <HorizontalStackLayout Grid.Column="0">
+                <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">
+                    <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    Clicked="ImageButton_Clicked"/>
+                </Frame>
+                <Frame Margin="10,0,0,0" BorderColor="Black">
+                    <Image Source="slogan.png"
+                    HeightRequest="100"/>
+                </Frame>
+            </HorizontalStackLayout >
+        </Frame>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,-50,0,49.5"/>
+        <Label Text="Edit Profile" FontSize="18" TextColor="LawnGreen" HorizontalOptions="CenterAndExpand"/>
+        <Frame BorderColor="Black" BackgroundColor="{x:StaticResource Gray900}" HorizontalOptions="CenterAndExpand">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Change card" HorizontalOptions="Start"/>
+                <Label x:Name="balanceLabel"  Text="" TextColor="LawnGreen" FontSize="14" FontAttributes="Italic"/>
+
+                <HorizontalStackLayout Spacing="50" HorizontalOptions="CenterAndExpand">
+                    <Entry x:Name="cardEntry" IsSpellCheckEnabled="false" Keyboard="Numeric" Placeholder="XXXX-XXXX-XXXX-XXXX" PlaceholderColor="White" BackgroundColor="{x:StaticResource Gray950}"
+                        TextColor="White" MinimumWidthRequest="450" MaxLength="16"/>
+                    <Button x:Name="changeCardButton" Text="Save" WidthRequest="70" HeightRequest="40"
+                            TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1.5" BackgroundColor="{x:StaticResource Gray900}" Clicked="onButton_Clicked"/>
+                </HorizontalStackLayout>
+                <Label x:Name="c_angryLabel" Text="" TextColor="Red" FontSize="10" />
+
+                <Label Text="Change login" HorizontalOptions="Start"/>
+
+                <HorizontalStackLayout Spacing="50">
+                    <Entry x:Name="loginEntry" IsSpellCheckEnabled="false" Keyboard="Numeric" Placeholder="new login" PlaceholderColor="White" BackgroundColor="{x:StaticResource Gray950}"
+                        TextColor="White" MinimumWidthRequest="450"/>
+                    <Button x:Name="changeLoginButton" Text="Save" WidthRequest="70" HeightRequest="40"
+                            TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1.5" BackgroundColor="{x:StaticResource Gray900}" Clicked="onButton_Clicked"/>
+                </HorizontalStackLayout>
+                <Label x:Name="l_angryLabel" Text="" TextColor="Red" FontSize="10" />
+
+                <Label Text="Change password" HorizontalOptions="Start"/>
+
+                <Grid ColumnSpacing="50" RowSpacing="5" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="450"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Entry x:Name="oldPasswordEntry" IsSpellCheckEnabled="false" Keyboard="Numeric" Placeholder="old password" PlaceholderColor="White" BackgroundColor="{x:StaticResource Gray950}"
+                        TextColor="White" MinimumWidthRequest="450" Grid.Row="0" Grid.Column="0" IsPassword="true"/>
+                    <Button x:Name="changePassswordButton" Text="save" TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1.5" BackgroundColor="{x:StaticResource Gray900}" 
+                            Grid.Column="1" Grid.Row="1" WidthRequest="70" HeightRequest="40" Clicked="onButton_Clicked"/>
+                    <Entry x:Name="newPasswordEntry" IsSpellCheckEnabled="false" Keyboard="Numeric" Placeholder="new password" PlaceholderColor="White" IsPassword="False" BackgroundColor="{x:StaticResource Gray950}"
+                        TextColor="White" MinimumWidthRequest="450" Grid.Row="1" Grid.Column="0" />
+                    <Entry x:Name="newPasswordEntry2" IsSpellCheckEnabled="false" Keyboard="Numeric" Placeholder="repeat password" PlaceholderColor="White" IsPassword="False" BackgroundColor="{x:StaticResource Gray950}"
+                        TextColor="White" MinimumWidthRequest="450" Grid.Row="2" Grid.Column="0"/>
+                    <Label x:Name="p_angryLabel" Text="" TextColor="Red" FontSize="10" Grid.Column="0" Grid.Row="3" />
+
+                </Grid>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
+                    <Button x:Name="backButton" BackgroundColor="{x:StaticResource Gray950}" Text="Back" TextColor="LawnGreen" BorderColor="LawnGreen"
+                            BorderWidth="1.5" WidthRequest="150" Clicked="onButton_Clicked"/>
+                    <Button x:Name="logOutButton" Text="Log Out" BackgroundColor="{x:StaticResource Gray950}" TextColor="{x:StaticResource GoodPurple}"
+                            BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5" WidthRequest="150" Clicked="onButton_Clicked"/>
+                    <Button x:Name="deleteButton" BackgroundColor="{x:StaticResource Gray950}" Text="Delete profile" TextColor="Red" FontAttributes="Bold"
+                            BorderColor="Red" BorderWidth="1.5" WidthRequest="150" Clicked="onButton_Clicked" FontSize="17" Pressed="deleteButton_Pressed" Released="deleteButton_Released"/>
+                </HorizontalStackLayout>
+                <Label x:Name="deleteAngryLabel" Text="" TextColor="Red" FontSize="10" HorizontalOptions="EndAndExpand" Margin="0,0,40,0"/>
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

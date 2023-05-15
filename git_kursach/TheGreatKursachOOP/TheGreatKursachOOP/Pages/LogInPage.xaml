@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.LogInPage"
+             Title="LogInPage"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <VerticalStackLayout>
+       
+            <HorizontalStackLayout HorizontalOptions="StartAndExpand">
+            <Frame HorizontalOptions="StartAndExpand" Margin="60,10,0,0" BorderColor="Black">
+                <Image Source="coollogo.png"
+                    Aspect="AspectFill"
+                    
+                    HeightRequest="75"
+                    WidthRequest="70" />
+            </Frame>
+            <Frame HorizontalOptions="FillAndExpand" Margin="10,30,0,0" BorderColor="Black">
+                <Image Source="slogan.png"
+                    HeightRequest="100"
+                
+                    HorizontalOptions="EndAndExpand"
+                />
+            </Frame>
+        </HorizontalStackLayout >
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" HeightRequest="0.6" MinimumWidthRequest="300" Margin="65, 0, 0, 10" HorizontalOptions="StartAndExpand"/>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" HeightRequest="0.6" MinimumWidthRequest="140" Margin="65, 0, 0, 10" HorizontalOptions="StartAndExpand"/>
+        <Border BackgroundColor="LawnGreen" Margin="70,0,70,0" Padding="1">
+            <Frame BackgroundColor="{x:StaticResource Gray600}" Padding="5" Grid.Row ="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BorderColor="{x:StaticResource GoodPurple}">
+
+                <VerticalStackLayout>
+                    <Label Padding="50,20,0,10" Text="LOG IN" FontSize="20" TextColor="{x:StaticResource GoodPurple}"/>
+                    <Frame BackgroundColor="{x:StaticResource Gray600}" BorderColor="{x:StaticResource Gray600}">
+                        <Grid ColumnDefinitions="25,*" BackgroundColor="{x:StaticResource Gray600}">
+                            
+                            <Entry x:Name="loginEntry" Placeholder="Login" Grid.Column="1" 
+                                   HeightRequest="40"
+                                   
+                               IsSpellCheckEnabled="False" BackgroundColor="Black"
+                               Focused="entryFocused" Unfocused="entryUnfocused" TextChanged="entryTextChanged"/>
+                        </Grid>
+                    </Frame>
+                    <Frame BackgroundColor="{x:StaticResource Gray600}" BorderColor="{x:StaticResource Gray600}">
+                        <Grid ColumnDefinitions="25,*">
+                           
+                            <Entry x:Name="passwordEntry" Placeholder="Password" Grid.Column="1"
+                               IsSpellCheckEnabled="False" BackgroundColor="Black"
+                               HeightRequest="40"  
+                               IsPassword="true"
+                               Focused="entryFocused" Unfocused="entryUnfocused" TextChanged="entryTextChanged"/>
+                           
+                        </Grid>
+                    </Frame>
+                    <Label x:Name ="angryLabel"  FontSize="11" TextColor="Red"/>
+                    <Grid HorizontalOptions="CenterAndExpand" ColumnSpacing="50">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="logInButton" BackgroundColor="{x:StaticResource Gray950}" Text="LOG IN"
+                        TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1" Grid.Column="0"
+                        WidthRequest="150" Pressed="buttonPressed" Released="buttonReleased" Clicked="onButtonClicked"
+                        />
+                        <Button x:Name="signUpButton" BackgroundColor="{x:StaticResource Gray950}" Text="SIGN UP"
+                        TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1" Grid.Column="1"
+                        WidthRequest="150" Pressed="buttonPressed" Released="buttonReleased" Clicked="onButtonClicked"
+                        />
+                    </Grid>
+                  
+                </VerticalStackLayout>
+            </Frame>
+        </Border>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" HeightRequest="0.6" MinimumWidthRequest="140" Margin="0, 10, 65, 0" HorizontalOptions="EndAndExpand"/>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" HeightRequest="0.6" MinimumWidthRequest="300" Margin="0, 10, 65, 0" HorizontalOptions="EndAndExpand"/>
+    </VerticalStackLayout>
+</ContentPage>

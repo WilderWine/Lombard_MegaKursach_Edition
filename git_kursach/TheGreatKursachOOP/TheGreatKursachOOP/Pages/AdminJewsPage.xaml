@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AdminJewsPage"
+             Title="AdminJewsPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="purplebackground.jpg"
+             
+             >
+    <VerticalStackLayout>
+        <HorizontalStackLayout Grid.Column="0" Margin="80,35,0,0" Spacing="30">
+            <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    Clicked="ImageButton_Clicked"/>
+            <Image Source="adminslogan.png"
+                    HeightRequest="100"/>
+        </HorizontalStackLayout >
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,0,0,0" HeightRequest="1.5"/>
+
+
+        <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" Padding="50,20,50,20" Margin="100,50,100,50" >
+            <VerticalStackLayout VerticalOptions="FillAndExpand">
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="50">
+                    <Button x:Name="cancelButton" Text="cancel" Clicked="Button_Clicked" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}"
+                            BorderColor="LawnGreen" BorderWidth="1.5" TextColor="LawnGreen"/>
+
+                    <Button x:Name="backButton" Text="back" Clicked="Button_Clicked" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}"
+                            BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5" TextColor="{x:StaticResource GoodPurple}"/>
+                    <Button x:Name="sellButton" Text="sell" Clicked="Button_Clicked" WidthRequest="150" HeightRequest="45" BackgroundColor="{x:StaticResource Gray950}"
+                            BorderColor="Gold" BorderWidth="1.5" TextColor="Gold" FontAttributes="Bold"/>
+                    <Label x:Name="balanceLabel" FontSize="18"/>
+                </HorizontalStackLayout>
+                <Line HeightRequest="1.5" BackgroundColor="{x:StaticResource GoodPurple}" Margin="50,20,50,0"/>
+
+                <ScrollView VerticalOptions="EndAndExpand" Margin="0,20" MinimumHeightRequest="400">
+                    <CollectionView x:Name="jewsView" ItemsSource="{Binding jewelries}" SelectionMode="Multiple">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+
+                                <HorizontalStackLayout Spacing="30">
+                                    <Image Source="{Binding Image}" HeightRequest="300"/>
+                                    <VerticalStackLayout Spacing="25" VerticalOptions="Center">
+                                    <Label Text="{Binding ID}" FontSize="16" TextDecorations="Underline"/>
+                                    <Label Text="{Binding Name}" FontSize="14" />
+                                    
+                                </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                                
+
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

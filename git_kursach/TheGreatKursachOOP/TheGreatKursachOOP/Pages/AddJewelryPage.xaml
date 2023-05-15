@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AddJewelryPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+    <VerticalStackLayout >
+
+
+        <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+            <HorizontalStackLayout Grid.Column="0">
+                <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">
+                    <Image Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70" />
+                </Frame>
+                <Frame Margin="10,0,0,0" BorderColor="Black">
+                    <Image Source="slogan.png"
+                    HeightRequest="100"/>
+                </Frame>
+            </HorizontalStackLayout >
+        </Frame>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,-50,0,49.5"/>
+        <ScrollView>
+            <VerticalStackLayout>
+                <Frame BackgroundColor="Black" BorderColor="Black" HorizontalOptions="CenterAndExpand">
+                    <Label Text ="Add something to hand over!" FontSize="18" TextColor="LawnGreen" FontAttributes="Italic"/>
+                </Frame>
+                <Frame HorizontalOptions="CenterAndExpand">
+                    <HorizontalStackLayout>
+                    <Button x:Name="image" ImageSource="imageicon.png" WidthRequest="100"  HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center"
+                             BorderColor="LawnGreen" BackgroundColor="Black" BorderWidth="1.5" Clicked="image_Clicked" CornerRadius="20"/>
+                    <Image x:Name="imageimage" HeightRequest="300"/>
+
+                    </HorizontalStackLayout>
+                </Frame>
+                    <Frame HorizontalOptions="CenterAndExpand" BorderColor="Black">
+
+                    <Entry x:Name="NameEnty" Background="Black" WidthRequest="300" Placeholder="Name" IsSpellCheckEnabled="false"/>
+
+                </Frame>
+                <Frame BackgroundColor="Black" BorderColor="Black" HorizontalOptions="CenterAndExpand">
+                    <Label Text ="Add something to hand over!" FontSize="18" TextColor="LawnGreen" FontAttributes="Italic"/>
+                </Frame>
+                <Frame HorizontalOptions="CenterAndExpand" BorderColor="Black">
+                    <HorizontalStackLayout>
+                        <Button x:Name="backButton" WidthRequest="150" Text="Back" TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1.5" BackgroundColor="{x:StaticResource Gray600}" Clicked="button_Clicked"/>
+                        <Button x:Name="addButton" WidthRequest="150" Text="Add" TextColor="{x:StaticResource GoodPurple}" BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5" BackgroundColor="{x:StaticResource Gray600}" Clicked="button_Clicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

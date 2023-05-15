@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TheGreatKursachOOP.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TheGreatKursachOOP"
+    
+    xmlns:pages="clr-namespace:TheGreatKursachOOP.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+
+  <!--  <ShellContent
+        Title="LogIn"
+        ContentTemplate="{DataTemplate pages:LogInPage}"
+        Route="LogIn" />
+    <ShellContent
+        Title="SignUp"
+        ContentTemplate="{DataTemplate pages:SignUpPage}"
+        Route="SignUp" />
+    <ShellContent
+        Title="ClientPage"
+        ContentTemplate="{DataTemplate pages:ClientBasePage}"
+        Route="ClientBasePage" />
+    <ShellContent
+        Title="AdminPage"
+        ContentTemplate="{DataTemplate pages:AdminBasePage}"
+        Route="AdminBasePage" />
+
+    <ShellContent
+        Title="MyJewsClient"
+        ContentTemplate="{DataTemplate pages:JewelriesPage}"
+        Route="MyJewsClient" />
+    
+    
+    <ShellContent
+        Title="AddJew"
+        ContentTemplate="{DataTemplate pages:AddJewelryPage}"
+        Route="AddJew" />
+    <ShellContent
+        Title="MyDealsClient"
+        ContentTemplate="{DataTemplate pages:DealsPage}"
+        Route="MyDealsClient" />
+    <ShellContent
+        Title="InfiteFriend"
+        ContentTemplate="{DataTemplate pages:AddFriendPage}"
+        Route="InviteFriend" />
+    <ShellContent
+        Title="LeaveComment"
+        ContentTemplate="{DataTemplate pages:AddCommentPage}"
+        Route="LeaveComment" />
+    
+    
+    <ShellContent
+        Title="Jew"
+        ContentTemplate="{DataTemplate pages:JewelryPage}"
+        Route="JewPage" />
+    <ShellContent
+        Title="Deal"
+        ContentTemplate="{DataTemplate pages:DealPage}"
+        Route="DealPage" />
+    <ShellContent
+        Title="Notifications"
+        ContentTemplate="{DataTemplate pages:NotificationsPage}"
+        Route="Notifications" />
+    <ShellContent
+        Title="Notification"
+        ContentTemplate="{DataTemplate pages:NotificatonPage}"
+        Route="NotificationPage" />
+    <ShellContent
+        Title="ClientProfile"
+        ContentTemplate="{DataTemplate pages:UserProfilePage}"
+        Route="ClientProfile" />
+
+ 
+    <ShellContent
+        Title="AdminJewsPage"
+        ContentTemplate="{DataTemplate pages:AdminJewsPage}"
+        Route="AdminJewsPage" />
+    <ShellContent
+        Title="AdminCommentsPage"
+        ContentTemplate="{DataTemplate pages:AdminCommentsPage}"
+        Route="AdminCommentsPage" />
+    <ShellContent
+        Title="AdminDealsPage"
+        ContentTemplate="{DataTemplate pages:AdminDealsPage}"
+        Route="AdminDealsPage" />-->
+
+
+</Shell>

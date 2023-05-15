@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AdminMakeDealPage"
+             Title="AdminMakeDealPage"
+             BackgroundImageSource="purplebackground.jpg"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <VerticalStackLayout>
+        <HorizontalStackLayout Grid.Column="0" Margin="80,35,0,0" Spacing="30">
+            <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    Clicked="ImageButton_Clicked"/>
+            <Image Source="adminslogan.png"
+                    HeightRequest="100"/>
+        </HorizontalStackLayout >
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,0,0,0" HeightRequest="1.5"/>
+
+
+        <Frame HorizontalOptions="FillAndExpand"  BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" Padding="50,20,50,20" Margin="200,50,200,50" >
+            <VerticalStackLayout HorizontalOptions="CenterAndExpand" HeightRequest="550">
+                <Label Text="Creating form" TextColor="LawnGreen" FontSize="16" HorizontalOptions="Center"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <VerticalStackLayout Grid.Column="0">
+                        <Image x:Name ="jewImage" HeightRequest="300"/>
+                        <Label Text="Product:" />
+                        <Label x:Name="jewNameLabel" />
+                        <Label x:Name="jewIdLabel" />
+                        <Label Text="Owner:" />
+                        <Label x:Name="clientIdLabel"/>
+                        <Label x:Name="clientNameLabel"/>
+                        <Label x:Name="clientSurnameLabel"/>
+                        <Label x:Name="clientFathernameLabel"/>
+                        <Label x:Name="clientPassLabel"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Start">
+                        <Label Text="Termin:" />
+                        <Entry WidthRequest="150" Margin="20,5,0,5" x:Name="daysEntry" Placeholder="days" TextChanged="entry_TextChanged"/>
+                        <Entry WidthRequest="150" Margin="20,5,0,5" x:Name="hoursEntry" Placeholder="hours" TextChanged="entry_TextChanged"/>
+                        <Entry WidthRequest="150" Margin="20,5,0,5" x:Name="minsEntry" Placeholder="minutes" TextChanged="entry_TextChanged"/>
+                        <Label Margin="20,5,0,5" x:Name="terminAngryLabel" TextColor="Red" FontSize="10"/>
+                        <Label Text="Payment"/>
+
+                        <VerticalStackLayout>
+                            <Entry WidthRequest="150" Margin="20,5,0,5" x:Name="loanEntry" Placeholder="loan" TextChanged="entry_TextChanged"/>
+                            <Label Margin="20,5,0,5" x:Name="loanAngryLabel" TextColor="Red" FontSize="10"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout>
+                            <Entry WidthRequest="150" Margin="20,5,0,5" x:Name="percentageEntry" Placeholder="percentage" TextChanged="entry_TextChanged"/>
+                            <Label Margin="20,5,0,5" x:Name="percentageAngryLabel" TextColor="Red" FontSize="10"/>
+                        </VerticalStackLayout>
+
+                        <Label x:Name="totalPaymentLabel" />
+                    </VerticalStackLayout>
+                </Grid>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="200">
+                    <Button x:Name="backButton" HeightRequest="45" WidthRequest="150" Text="Back" Clicked="onButton_Clicked" BackgroundColor="{x:StaticResource Gray950}"
+                            TextColor="LawnGreen" BorderColor="LawnGreen" BorderWidth="1.5"
+                            />
+                    <Button x:Name="saveButton" HeightRequest="45" WidthRequest="150" Text="Save" Clicked="onButton_Clicked" BackgroundColor="{x:StaticResource Gray950}"
+                            TextColor="{x:StaticResource GoodPurple}" BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5"
+                            />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheGreatKursachOOP.Pages.AddCommentPage"
+             Title="AddCommentPage"         
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             >
+    <VerticalStackLayout>
+        <Frame BorderColor="Black" HorizontalOptions="StartAndExpand">
+            <HorizontalStackLayout Grid.Column="0">
+                <Frame HorizontalOptions="StartAndExpand" Margin="60,-20,0,0" BorderColor="Black">
+                    <ImageButton Source="coollogo.png" 
+                    Aspect="AspectFill"
+                    HeightRequest="75"
+                    WidthRequest="70"
+                    Clicked="ImageButton_Clicked"/>
+                </Frame>
+                <Frame Margin="10,0,0,0" BorderColor="Black">
+                    <Image Source="slogan.png"
+                    HeightRequest="100"/>
+                </Frame>
+            </HorizontalStackLayout >
+        </Frame>
+        <Line BackgroundColor="{x:StaticResource GoodPurple}" Margin="0,-50,0,49.5"/>
+
+        <Label Margin="0,0,0,20" Text="Leave Comment" FontSize="18" TextColor="LawnGreen" HorizontalOptions="CenterAndExpand"/>
+        <Frame HorizontalOptions="CenterAndExpand" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}" Margin="100, 0, 100, 0">
+            <VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+                    <HorizontalStackLayout HorizontalOptions="StartAndExpand" Spacing="35" Margin="20,0,0,0">
+                    <Entry x:Name="pseudonimEntry" Placeholder="Name" WidthRequest="300" BackgroundColor="{x:StaticResource Gray950}" TextChanged="pseudonimEntry_TextChanged"/>
+                    <Switch x:Name="nameSwitch" ThumbColor="{x:StaticResource GoodPurple}" OnColor="LawnGreen" Toggled="nameSwitch_Toggled"/>
+                     
+                    </HorizontalStackLayout>
+                <Frame BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource Gray900}">
+                    <Editor x:Name="commentEditor" Margin="-5" Placeholder="leave comment here" IsSpellCheckEnabled="False" BackgroundColor="{x:StaticResource Gray950}"  HeightRequest="100" WidthRequest="700" />
+                </Frame>
+                    <Label Margin="20,-10,0,0" x:Name="c_angryLabel" TextColor="Red" FontSize="10" Text=""/>
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="50">
+                        <Button x:Name="backButton" BackgroundColor="{x:StaticResource Gray900}" BorderColor="LawnGreen" BorderWidth="1.5" TextColor="LawnGreen" Text="Back"
+                                WidthRequest="150" HeightRequest="50" Clicked="onButton_Clicked"/>
+                        <Button x:Name="addButton" BackgroundColor="{x:StaticResource Gray900}" BorderColor="{x:StaticResource GoodPurple}" BorderWidth="1.5" TextColor="{x:StaticResource GoodPurple}" Text="Add"
+                                WidthRequest="150" HeightRequest="50" Clicked="onButton_Clicked"/>
+                    </HorizontalStackLayout>
+                    
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label Text="Comments" Margin="0,35,0,10" TextColor="LawnGreen"/>
+                    <Line BackgroundColor="LawnGreen" Margin="0"/>
+                </VerticalStackLayout>
+                
+
+
+                <ScrollView HorizontalOptions="CenterAndExpand">
+                    <ListView x:Name="commentsList" ItemsSource="{Binding comments}" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="0" Margin="10" ColumnSpacing="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Frame BackgroundColor="LawnGreen" CornerRadius="60" HeightRequest="15" WidthRequest="15" Margin="0"
+                                                       VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="0"/>
+                                        <VerticalStackLayout Grid.Column="1">
+                                            <Label Text="{Binding Pseudonim}" FontSize="16" TextColor="BlanchedAlmond"/>
+                                            <Label Text="{Binding Content}" FontSize="14"/>
+                                        </VerticalStackLayout>
+                                        
+                                    </Grid>
+                                    
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </ScrollView>
+
+            </VerticalStackLayout>
+
+
+          
+        </Frame>
+
+
+       
+
+        
+    </VerticalStackLayout>
+</ContentPage>
